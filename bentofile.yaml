@@ -1,0 +1,25 @@
+service: "service:OCR"
+labels:
+  owner: "tgt"
+  project: "marksheets-pipeline"
+
+include:
+  - "*.py"
+  - "requirements.txt"
+
+python:
+  packages:
+    - torch
+    - transformers
+    - Pillow
+    - numpy
+    - surya-ocr
+    - bentoml
+    - typing
+
+# docker:
+#   system_packages:
+#     - libgl1-mesa-glx
+#     - libglib2.0-0
+#   cuda_version: "11.8"
+#   dockerfile_template: "./Dockerfile"

@@ -7,8 +7,8 @@ from typing import Dict, Any
 from PIL import ImageDraw
 import numpy as np
 import io
-model_path="Qwen/Qwen2.5-0.5B-Instruct"
-@bentoml.service(resources={"cpu": "4"},traffic={"timeout": 10000})
+model_path="deepseek-ai/DeepSeek-R1-Distill-Llama-8B"
+@bentoml.service(resources={"gpu" : 1 },traffic={"timeout": 10000})
 class OCR: 
     model_ocr_path = HuggingFaceModel("vikp/surya_rec2")
     llm_path = HuggingFaceModel(model_path)
